@@ -12,13 +12,12 @@ To add items chich can be coted on, simply insert a document with the following 
 
     {
        "_id": "2",
-       "_rev": "1-097c8fe22f4383e6fe936e131f7df91a",
        "type": "selection",
        "group": "White Stripes",
        "song": "Ball & Biscuit"
     }
 
-This structure will feed the "selections" view and render selections in HTML for voters to view and select.
+This structure will feed the "selections" view and render selections in HTML for voters to view and select. The "_id" property used is the vote selection users will send through their Tropo app.
 
 ## What is a CouchApp?
 
