@@ -6,6 +6,20 @@ The magic is in Tropo's ability to make HTTP requests from inside a running tele
 
 Tropo + CouchBase == Cloud Telephony Awesomeness!
 
+## Document Structure
+
+To add items chich can be coted on, simply insert a document with the following structure.
+
+    {
+       "_id": "2",
+       "_rev": "1-097c8fe22f4383e6fe936e131f7df91a",
+       "type": "selection",
+       "group": "White Stripes",
+       "song": "Ball & Biscuit"
+    }
+
+This structure will feed the "selections" view and render selections in HTML for voters to view and select.
+
 ## What is a CouchApp?
 
 CouchApps are web applications which can be served directly from [CouchDB](http://couchdb.apache.org). This gives them the nice property of replicating just like any other data stored in CouchDB. They are also simple to write as they can use the built-in jQuery libraries and plugins that ship with CouchDB.
