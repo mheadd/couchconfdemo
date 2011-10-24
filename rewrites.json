@@ -1,0 +1,34 @@
+[
+{
+  "from": "",
+  "to": "index.html"
+},
+{
+  "from": "vendor/*",
+  "to": "vendor/*"
+},
+{
+  "from": "app/*",
+  "to": "app/*"
+},
+{
+  "from": "style/*",
+  "to": "style/*"
+},
+{
+  "from": "_view/*",
+  "to": "_view/*"
+},
+{
+  "from": "_changes/*",
+  "to": "_changes/*"
+},
+{
+  "from": "couchconfdemo/*",
+  "to": "../../*"
+},
+{
+  "from": "couchconfdemo/",
+  "to": "../../"
+}
+]

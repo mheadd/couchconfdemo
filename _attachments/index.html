@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>Tropo-Powered Realtime SMS Voting</title>
+<link rel="stylesheet" href="style/main.css" type="text/css"></head>
+<body>
+<h2></h2>
+<center>
+<div id="row"></div>
+</center>
+<p class="footer">Powered by <a href="http://tropo.com">Tropo</a></p>
+</body>
+<script src="vendor/couchapp/loader.js"></script>
+<script type="text/javascript" charset="utf-8">
+  
+  $.couch.app(function(app) {
+  
+    // Set the database to use.
+    var db = $.couch.db("couchconfdemo");
+    
+    // Get the phone number for voting and render.
+    db.view("couchconfdemo/number", {
+    	success: function(data) {
+    		for(var i=0; i<data.rows.length; i++) {
+				$("h2").append(data.rows[i].value);
+    		}	
+    	}    	
+    });     
+    
+    // Get all selections available for voting.
+    db.view("couchconfdemo/selections", {
+    	success: function(data) {
+    		for(var i=0; i<data.rows.length; i++) {
+    			var selection = "<div id=\"choice\"><p class=\"score\" id=\"" + data.rows[i].id + "\">0</p><div class=\"selection\">";
+    			selection += data.rows[i].id + "</div><p class=\"name\">" + data.rows[i].value.song; 
+    			selection += " (" + data.rows[i].value.group + ")</p></div>";
+				$("#row").append(selection);
+    		}	
+    	}    	
+    });    
+    
+    // Get all past votes and incremement total.
+    db.view("couchconfdemo/votes", {
+    	success: function(data) {
+    		for(var i=0; i<data.rows.length; i++) {
+    			var selector = "#" + data.rows[i].value;
+    			var newValue = parseInt($(selector).html()) + 1;
+    	        $(selector).html(newValue);    			
+    		}	
+    	}    	
+    });
+    
+    // Watch the changes API for new votes.
+    db.changes(null, {include_docs: true}).onChange(function (data) {
+      for(var i=0; i<data.results.length; i++) {
+        var selector = "#" + data.results[i].doc.selection;
+        var newValue = parseInt($(selector).html()) + 1;
+        $(selector).html(newValue);
+      }
+    });
+  
+  });
+  
+</script>
+<script type="text/javascript" src="/_utils/script/jquery.couch.js"></script>
+</html>
