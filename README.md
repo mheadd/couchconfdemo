@@ -17,7 +17,16 @@ To add items chich can be coted on, simply insert a document with the following 
        "song": "Ball & Biscuit"
     }
 
-This structure will feed the "selections" view and render selections in HTML for voters to view and select. The "_id" property used is the vote selection users will send through their Tropo app.
+This structure will feed the "selections" view and render selections in HTML for voters to view and select. The "_id" property used is the vote selection users will send through their Tropo app, so you'll want to PUT this document into the database with a specific doc id.
+
+In addition, you can set a phone number for display by inserting a document with this structure.
+
+    {
+       "_id": "1ae1b96038c2db0d3611e47df7003794",
+       "number": "(407) 555-0000"
+} 
+
+The doc id for this document is not important, so you can POST this document to your database.
 
 ## What is a CouchApp?
 
