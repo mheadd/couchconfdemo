@@ -1,0 +1,40 @@
+{
+  "docs": [
+    {
+       "_id": "1",
+       "type": "selection",
+       "group": "Rolling Stones",
+       "song": "Can't You Hear Me Knocking"
+    },
+    {
+       "_id": "2",
+       "type": "selection",
+       "group": "White Stripes",
+       "song": "Ball & Biscuit"
+    },
+    {
+       "_id": "3",
+       "type": "selection",
+       "group": "Green Day",
+       "song": "Homecoming"
+    },
+    {
+       "_id": "4",
+       "type": "selection",
+       "group": "Iron Butterfly",
+       "song": "In-A-Gadda-Da-Vida"
+    },
+    {
+       "_id": "5",
+       "type": "selection",
+       "group": "Jimi Hendrix",
+       "song": "Voodoo Chile"
+    },
+    {
+       "_id": "6",
+       "type": "selection",
+       "group": "The Doors",
+       "song": "The End"
+    }
+ ]
+}
