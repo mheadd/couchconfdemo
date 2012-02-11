@@ -11,7 +11,7 @@ define("COUCH_PASS", "");
 function saveVote($id, $vote) {
 
 	$doc = json_encode(array("selection" => $vote));
-	$url = COUCH_HOST.":".COUCH_DB_PORT."/".COUCH_DB_NAME."/$id";
+	$url = COUCH_HOST.":".COUCH_PORT."/".COUCH_DB_NAME."/$id";
 	
 	$putData = tmpfile();
 	fwrite($putData, $doc);
